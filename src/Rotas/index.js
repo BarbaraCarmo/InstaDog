@@ -6,6 +6,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import estilos from './estilos';
 
 import Principal from '../Telas/Principal';
+import Perfil from '../Telas/Perfil';
+
 import { cores } from '../estilosGlobal';
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +22,7 @@ export default function Rotas() {
                     } else if (route.name == "Pesquisar") {
                         return <Ionicons name={focused ? "search" : "search-outline"} style={estilos.icones}/>
                     } else if (route.name == "Play") {
-                        return <Ionicons name={focused ? "play-circle" : "play-circle-outline"} style={estilos.icones}/>
+                        return <MCIcon name={focused ? "play-box-multiple" : "play-box-multiple-outline"} style={estilos.icones}/>
                     }else if (route.name == "Shop") {
                         return <MCIcon name={focused ? "shopping" : "shopping-outline"} style={estilos.icones}/>
                     } else {
@@ -37,7 +39,7 @@ export default function Rotas() {
             <Tab.Screen name="Pesquisar" component={Principal} />
             <Tab.Screen name="Play" component={Principal} />
             <Tab.Screen name="Shop" component={Principal} />
-            <Tab.Screen name="Perfil" component={Principal} />
+            <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
     </NavigationContainer>
 }

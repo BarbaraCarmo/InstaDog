@@ -9,7 +9,7 @@ export default StyleSheet.create({
     },
     tituloCabecalho: {
         flex: 3,
-        fontSize: 20,
+        fontSize: 23,
         alignSelf: "center",
         color: cores.branco,
         padding: 15,
@@ -34,5 +34,5 @@ export default StyleSheet.create({
         fontSize: 25,
         padding: 0,
         alignSelf: "center",
-    }
+    },
 });

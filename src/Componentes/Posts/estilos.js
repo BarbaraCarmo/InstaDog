@@ -17,7 +17,6 @@ export default StyleSheet.create({
         borderRadius: 180,
         borderWidth: 2,
         borderColor: cores.branco,
-        backgroundColor: cores.fundoPadrao,
     },
     userName: {
         flex: 2,
