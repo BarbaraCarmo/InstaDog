@@ -44,11 +44,11 @@ const stories = [
 function Icones(id, name, icone) {
     return <View >
         <Image style={estilos.userPhoto} source={require("../../../assets/dog.jpg")} />
-        <Text style={estilos.userName}>teste</Text>
+        <Text style={estilos.userName}>name</Text>
     </View>
 }
 
-export default function Posts() {
+export default function Stories() {
     return <>
         <View style={estilos.stories}>
             <FlatList

@@ -1,19 +1,17 @@
 import React from 'react';
 import { Text, Image, View, FlatList } from 'react-native'
 import estilos from './estilos';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import estilosGlobal, { cores } from '../../estilosGlobal';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import FIcons from 'react-native-vector-icons/Feather';
+import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function checkStatus(response){
-    if(response.ok){
-      return Promise.resolve(response);
-    }else{
-      return Promise.reject(new Error(response.statusText));
-    }
-  }
-
-
-
+function pressHeart(){
+    if(press == "heart-outline"){
+        press = "heart";
+    } else (press = "heart-outline")
+    return press
+}
 
 export default function Posts({ username, icone, postagem }) {
     return <>
@@ -23,11 +21,11 @@ export default function Posts({ username, icone, postagem }) {
         </View>
         <Image style={estilos.postagem} source={{uri: postagem}} />
         <View style={estilos.flexArea}>
-            <Icon name="heart-o" style={estilos.icones} />
-            <Icon name="comment-o" style={estilos.icones} />
-            <Icon name="send-o" style={estilos.icones} />
+            <MCIcons name="heart-outline" style={estilos.icones} />
+            <Ionicons name="chatbubble-outline" style={estilos.icones} />
+            <FIcons name="send" style={estilos.icones} />
             <View style={{ alignItems: "flex-end", flex: 0.7 }}>
-                <Icon name="bookmark-o" style={estilos.saveIcon} />
+                <FAIcon name="bookmark-o" style={estilos.saveIcon} />
             </View>
         </View>
         <Text style={estilos.nameCaption}>

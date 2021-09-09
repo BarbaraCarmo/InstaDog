@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const cores = {
-    fundoPadrao: '#1B1B1B',
+    fundoPadrao: 'black',
     verde: 'green',
     rosa: 'pink',
     roxo: 'purple',
