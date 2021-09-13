@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, ScrollView, Image, Text, View } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import FAIcon from 'react-native-vector-icons/FontAwesome';
@@ -10,9 +10,29 @@ import estilos from './estilos';
 import estilosTelas from '../estilos';
 import Stories from '../../Componentes/Stories';
 
-export default function Perfil() {
-    return <>
+function Colunas() {
+    return <Col style={{ alignItems: "center" }}>
+        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/dog.jpg")} /></Row>
+        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
+        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
+        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
+        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
+    </Col>
+}
 
+export default function Perfil() {
+    const [imagem, setImagem] = useState("");
+
+    useEffect(() => {
+        fetch('https://dog.ceo/api/breed/hound/images/random')
+            .then(response => response.json())
+            .then(response => setImagem(response.message))
+            .catch(err => console.error(err));
+    })
+
+    console.log(imagem);
+
+    return <>
         {/* Nome, add e menu */}
         <View style={estilos.flexArea}>
             <Text style={estilosTelas.tituloCabecalho}>gudan_ohusky</Text>
@@ -22,7 +42,7 @@ export default function Perfil() {
 
         {/* Foto de usuário e números */}
         <View style={{ flex: 0.3, flexDirection: 'row', backgroundColor: cores.fundoPadrao }}>
-            <Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} />
+            <Image style={estilos.userPhoto} source={{ uri: 'https://images.dog.ceo/breeds/hound-afghan/n02088094_305.jpg' }} />
             <ADIcons name="pluscircle" style={estilos.plusIcon} />
             <View style={estilos.infosNumeros}>
                 <Text style={estilos.numeros}>484</Text>
@@ -66,23 +86,11 @@ export default function Perfil() {
         </View>
 
         {/* Grade de fotos */}
-        <ScrollView style={{ flex: 2 }}>
+        <ScrollView style={{ flex: 2, backgroundColor: cores.fundoPadrao }}>
             <Grid>
-                <Col>
-                    <Row style={{backgroundColor: cores.verde}}><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                    <Row><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                    <Row><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                </Col>
-                <Col>
-                    <Row style={{backgroundColor: cores.verde}}><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                    <Row><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                    <Row><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                </Col>
-                <Col>
-                    <Row style={{backgroundColor: cores.verde}}><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                    <Row><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                    <Row><Image style={estilos.userPhoto} source={require("../../../assets/gudan.jpg")} /></Row>
-                </Col>
+                <Colunas />
+                <Colunas />
+                <Colunas />
             </Grid>
         </ScrollView>
     </>
