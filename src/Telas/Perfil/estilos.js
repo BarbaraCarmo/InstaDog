@@ -5,8 +5,8 @@ export default StyleSheet.create({
     userPhoto: {
         flex: 1,
         margin: 10,
-        height: 80,
-        width: 80,
+        height: 85,
+        width: 85,
         borderRadius: 180,
         alignSelf: "center",
     },
@@ -32,13 +32,13 @@ export default StyleSheet.create({
     },
     plusIcon: {
         position: "absolute",
-        top: 70,
-        left: 70,
+        top: 72,
+        left: 72,
         color: cores.azul,
         fontSize: 20,
     },
     infosPerfil: {
-        flex: 0.15,
+        flex: 0.2,
         padding: 10,
         backgroundColor: cores.fundoPadrao
     },
@@ -78,8 +78,9 @@ export default StyleSheet.create({
         alignSelf: "center",
     },
     fotosFeed: {
-        maxHeight: 150,
-        maxWidth: 150,
+        height: 135,
+        width: 135,
+        margin: 2,
         alignSelf: "center",
     }
 });

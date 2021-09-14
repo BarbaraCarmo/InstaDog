@@ -9,28 +9,32 @@ import { cores } from '../../estilosGlobal';
 import estilos from './estilos';
 import estilosTelas from '../estilos';
 import Stories from '../../Componentes/Stories';
+import { posts } from '../../Dados/data';
 
-function Colunas() {
-    return <Col style={{ alignItems: "center" }}>
-        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/dog.jpg")} /></Row>
-        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
-        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
-        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
-        <Row><Image style={estilos.fotosFeed} source={require("../../../assets/gudan.jpg")} /></Row>
-    </Col>
-}
 
 export default function Perfil() {
     const [imagem, setImagem] = useState("");
 
     useEffect(() => {
-        fetch('https://dog.ceo/api/breed/hound/images/random')
+        fetch('https://dog.ceo/api/breed/husky/images/random/20')
             .then(response => response.json())
-            .then(response => setImagem(response.message))
+            .then(response => {
+                setImagem(response.message);
+            })
             .catch(err => console.error(err));
-    })
+    }, [])
 
-    console.log(imagem);
+    // function Colunas() {
+    //     var linhas = [];
+    //     return <>
+    //     for (let i = 1; i <= 6; i++) {
+    //         linhas.push(
+    //             <Image style={estilos.fotosFeed} source={{ uri: imagem[i] }} />
+    //         )
+    //     }
+    //     </>
+        
+    // }
 
     return <>
         {/* Nome, add e menu */}
@@ -42,7 +46,7 @@ export default function Perfil() {
 
         {/* Foto de usuário e números */}
         <View style={{ flex: 0.3, flexDirection: 'row', backgroundColor: cores.fundoPadrao }}>
-            <Image style={estilos.userPhoto} source={{ uri: 'https://images.dog.ceo/breeds/hound-afghan/n02088094_305.jpg' }} />
+            <Image style={estilos.userPhoto} source={{ uri: imagem[0] }} />
             <ADIcons name="pluscircle" style={estilos.plusIcon} />
             <View style={estilos.infosNumeros}>
                 <Text style={estilos.numeros}>484</Text>
@@ -62,7 +66,8 @@ export default function Perfil() {
         <View style={estilos.infosPerfil}>
             <Text style={estilos.userName}>GUDANZINHO</Text>
             <Text style={estilos.categoria}>Celebridade</Text>
-            <Text style={estilos.descricao}>Imperador Turbo</Text>
+            <Text style={estilos.descricao}>Imperador Modo Turbo</Text>
+            <Text style={estilos.descricao}>+6,9M TixTox</Text>
         </View>
 
         {/* Botão editar perfil */}
@@ -73,7 +78,7 @@ export default function Perfil() {
         </View>
 
         {/* Destaques */}
-        <View style={{ flex: 0.28 }}>
+        <View style={{ flex: 0.3 }}>
             <Stories />
         </View>
 
@@ -88,9 +93,30 @@ export default function Perfil() {
         {/* Grade de fotos */}
         <ScrollView style={{ flex: 2, backgroundColor: cores.fundoPadrao }}>
             <Grid>
-                <Colunas />
-                <Colunas />
-                <Colunas />
+                <Col style={{ alignItems: "center" }}>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[1] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[2] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[3] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[4] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[5] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[6] }} /></Row>
+                </Col>
+                <Col style={{ alignItems: "center" }}>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[7] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[8] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[9] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[10] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[11] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[12] }} /></Row>
+                </Col>
+                <Col style={{ alignItems: "center" }}>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[13] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[14] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[15] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[16] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[17] }} /></Row>
+                    <Row><Image style={estilos.fotosFeed} source={{ uri: imagem[18] }} /></Row>
+                </Col>
             </Grid>
         </ScrollView>
     </>

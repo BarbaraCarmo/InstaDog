@@ -9,14 +9,13 @@ export default StyleSheet.create({
         backgroundColor: cores.fundoPadrao
     },
     userPhoto: {
-        flex: 2,
         margin: 5,
-        maxHeight: 35,
-        maxWidth: 35,
+        height: 35,
+        width: 35,
         alignSelf: "center",
         borderRadius: 180,
-        borderWidth: 2,
-        borderColor: cores.branco,
+        // borderWidth: 2,
+        // borderColor: cores.branco,
     },
     userName: {
         flex: 2,

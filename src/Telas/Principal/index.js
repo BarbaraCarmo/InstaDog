@@ -9,14 +9,7 @@ import Stories from '../../Componentes/Stories';
 import { posts } from '../../Dados/data';
 
 export default function Principal() {
-    function getRandomDoggo() {
-        fetch('https://dog.ceo/api/breeds/image/random')
-            .then(response => response.json())
-            .then(response => {
-                return (response.message)
-            })
-            .catch(err => console.error(err));
-    }
+
     return <>
 
         {/* InstaDog e icones */}

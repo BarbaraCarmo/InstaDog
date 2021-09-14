@@ -1,32 +1,74 @@
 export const posts = [
     {
         id: 1,
-        username: "doguinho01",
-        icone: "../../../assets/icon.png",
-        postagem: "https://images.dog.ceo/breeds/samoyed/n02111889_2030.jpg",
+        username: "itsdougthepug",
     },
     {
         id: 2,
-        username: "doguinho02",
-        icone: "",
-        postagem: "https://images.dog.ceo/breeds/poodle-miniature/n02113712_2632.jpg",
+        username: "winston_hashiham",
     },
     {
         id: 3,
-        username: "doguinho03",
-        icone: "",
-        postagem: "https://images.dog.ceo/breeds/poodle-miniature/n02113712_2632.jpg",
+        username: "gudan_ohusky",
     },
-    // {
-    //     id: 4,
-    //     username: "doguinho04",
-    //     icone: "",
-    //     postagem: getRandomDoggo(),
-    // },
-    // {
-    //     id: 5,
-    //     username: "doguinho05",
-    //     icone: "",
-    //     postagem: getRandomDoggo(),
-    // },
+    {
+        id: 4,
+        username: "buddyboowaggytails",
+    },
+    {
+        id: 5,
+        username: "jiffpom",
+    },
+    {
+        id: 6,
+        username: "bearcoat_tonkey",
+    },
+    {
+        id: 7,
+        username: "tunameltsmyheart",
+    },
+    {
+        id: 8,
+        username: "blant_ahusk",
+    },
+    {
+        id: 9,
+        username: "sofie.schnauzer_",
+    },
+]
+
+export const stories = [
+    {
+        id: 1,
+        name: "dodge01",
+    },
+    {
+        id: 2,
+        name: "dodge02",
+        icone: "",
+    },
+    {
+        id: 3,
+        name: "dodge03",
+    },
+    {
+        id: 4,
+        name: "dodge04",
+    },
+    {
+        id: 5,
+        name: "dodge05",
+    },
+    {
+        id: 6,
+        name: "dodge06",
+    },
+    {
+        id: 7,
+        name: "dodge07",
+    },
+    {
+        id: 8,
+        name: "dodge08",
+    },
 ]
