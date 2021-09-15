@@ -9,8 +9,7 @@ import { cores } from '../../estilosGlobal';
 import estilos from './estilos';
 import estilosTelas from '../estilos';
 import Stories from '../../Componentes/Stories';
-import { posts } from '../../Dados/data';
-
+import { posts, stories } from '../../Dados/data';
 
 export default function Perfil() {
     const [imagem, setImagem] = useState("");
@@ -79,7 +78,7 @@ export default function Perfil() {
 
         {/* Destaques */}
         <View style={{ flex: 0.3 }}>
-            <Stories />
+            <Stories teste={stories}/>
         </View>
 
         {/* Icones feed, reels, igtv */}

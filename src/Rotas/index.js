@@ -7,6 +7,7 @@ import estilos from './estilos';
 
 import Principal from '../Telas/Principal';
 import Perfil from '../Telas/Perfil';
+import Pesquisa from '../Telas/Pesquisa';
 
 import { cores } from '../estilosGlobal';
 
@@ -36,7 +37,7 @@ export default function Rotas() {
             })}
         >
             <Tab.Screen name="Principal" component={Principal} />
-            <Tab.Screen name="Pesquisar" component={Principal} />
+            <Tab.Screen name="Pesquisar" component={Pesquisa} />
             <Tab.Screen name="Play" component={Principal} />
             <Tab.Screen name="Shop" component={Principal} />
             <Tab.Screen name="Perfil" component={Perfil} />

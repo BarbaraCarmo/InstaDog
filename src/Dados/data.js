@@ -1,74 +1,86 @@
 export const posts = [
     {
         id: 1,
-        username: "itsdougthepug",
+        name: "itsdougthepug",
     },
     {
         id: 2,
-        username: "winston_hashiham",
+        name: "winston_hashiham",
     },
     {
         id: 3,
-        username: "gudan_ohusky",
+        name: "gudan_ohusky",
     },
     {
         id: 4,
-        username: "buddyboowaggytails",
+        name: "buddyboowaggytails",
     },
     {
         id: 5,
-        username: "jiffpom",
+        name: "jiffpom",
     },
     {
         id: 6,
-        username: "bearcoat_tonkey",
+        name: "bearcoat_tonkey",
     },
     {
         id: 7,
-        username: "tunameltsmyheart",
+        name: "tunameltsmyheart",
     },
     {
         id: 8,
-        username: "blant_ahusk",
+        name: "blant_ahusk",
     },
     {
         id: 9,
-        username: "sofie.schnauzer_",
+        name: "sofie.schnauzer_",
+    },
+    {
+        id: 10,
+        name: "pinscher_lola_",
+    },
+    {
+        id: 11,
+        name: "hunter_srd",
+    },
+    {
+        id: 12,
+        name: "malcomsalsicha",
     },
 ]
 
 export const stories = [
     {
         id: 1,
-        name: "dodge01",
+        name: "Caixa Postau",
     },
     {
         id: 2,
-        name: "dodge02",
+        name: "Youtube",
         icone: "",
     },
     {
         id: 3,
-        name: "dodge03",
+        name: "Sobre mim",
     },
     {
         id: 4,
-        name: "dodge04",
+        name: "Uivando",
     },
     {
         id: 5,
-        name: "dodge05",
+        name: "Meus Fã",
     },
     {
         id: 6,
-        name: "dodge06",
+        name: "Pet Love",
     },
     {
         id: 7,
-        name: "dodge07",
+        name: "Waze",
     },
     {
         id: 8,
-        name: "dodge08",
+        name: "TixTox",
     },
 ]

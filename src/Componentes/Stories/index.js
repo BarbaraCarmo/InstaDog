@@ -1,10 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, View, FlatList, Text } from 'react-native';
 import estilos from './estilos';
-import { posts } from '../../Dados/data';
+import { posts, stories } from '../../Dados/data';
 
-export default function Stories() {
+export default function Stories({teste}) {
     const [imagem, setImagem] = useState("");
+    const [fonte, setFonte] = useState("");
+
+    // if (teste) { 
+    //     setFonte({ posts }) 
+    // } else { 
+    //     setFonte({ stories }) 
+    // }
 
     useEffect(() => {
         fetch('https://dog.ceo/api/breeds/image/random/15')
@@ -15,10 +22,12 @@ export default function Stories() {
             .catch(err => console.error(err));
     }, [])
 
-    function Icones({ id, username }) {
-        return <View >
-            <Image style={estilos.userPhoto} source={{uri: imagem[id]}} />
-            <Text style={estilos.userName}>{username}</Text>
+    function Icones({ id, name }) {
+        return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', margin: 2 }} >
+            <Image style={estilos.userPhoto} source={{ uri: imagem[id] }} />
+            <Text numberOfLines={1} ellipsizeMode='tail' style={estilos.userName}>{((name).length > 12) ?
+                (((name).substring(0, 12 - 3)) + '...') :
+                name}</Text>
         </View>
     }
 
@@ -26,7 +35,7 @@ export default function Stories() {
         <View style={estilos.stories}>
             <FlatList
                 horizontal
-                data={posts}
+                data={teste}
                 renderItem={({ item }) => <Icones {...item} />}
                 keyExtractor={({ id }) => String(id)}
             />

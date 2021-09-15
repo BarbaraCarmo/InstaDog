@@ -9,7 +9,7 @@ import Stories from '../../Componentes/Stories';
 import { posts } from '../../Dados/data';
 
 export default function Principal() {
-
+    
     return <>
 
         {/* InstaDog e icones */}
@@ -20,7 +20,8 @@ export default function Principal() {
             <Ionicons name="chatbubble-ellipses-outline" style={estilos.icones} />
         </View>
 
-        <Stories />
+
+        <Stories teste={posts} />
 
         {/* Postagens */}
         <View style={estilos.posts}>

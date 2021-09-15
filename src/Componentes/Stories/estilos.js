@@ -7,10 +7,10 @@ export default StyleSheet.create({
         backgroundColor: cores.fundoPadrao,
     },
     userPhoto: {
-        flex: 2.5,
+        flex: 3,
         margin: 7,
-        height: 65,
-        width: 62,
+        height: 70,
+        width: 65,
         alignSelf: "center",
         borderRadius: 180,
         borderWidth: 1,
@@ -18,7 +18,8 @@ export default StyleSheet.create({
         backgroundColor: cores.fundoPadrao,
     },
     userName: {
-        flex: 1,
+        flex: 0.8,
+        fontSize: 12,
         color: cores.branco,
         alignSelf: "center"
     }
