@@ -79,8 +79,8 @@ export default StyleSheet.create({
     },
     fotosFeed: {
         height: 135,
-        width: 135,
-        margin: 2,
+        width: 136,
+        margin: 1,
         alignSelf: "center",
     }
 });

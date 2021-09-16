@@ -8,6 +8,12 @@ export default StyleSheet.create({
         color: 'white', 
         borderRadius: 10, 
         margin: 20,
-        padding: 5,
+        padding: 10,
+    }, 
+    fotos: {
+        height: 135,
+        width: 136,
+        margin: 1,
+        alignSelf: "center",
     }
 });
