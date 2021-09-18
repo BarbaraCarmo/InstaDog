@@ -3,15 +3,8 @@ import { Image, View, FlatList, Text } from 'react-native';
 import estilos from './estilos';
 import { posts, stories } from '../../Dados/data';
 
-export default function Stories({teste}) {
+export default function Stories({fonte}) {
     const [imagem, setImagem] = useState("");
-    const [fonte, setFonte] = useState("");
-
-    // if (teste) { 
-    //     setFonte({ posts }) 
-    // } else { 
-    //     setFonte({ stories }) 
-    // }
 
     useEffect(() => {
         fetch('https://dog.ceo/api/breeds/image/random/15')
@@ -35,7 +28,7 @@ export default function Stories({teste}) {
         <View style={estilos.stories}>
             <FlatList
                 horizontal
-                data={teste}
+                data={fonte}
                 renderItem={({ item }) => <Icones {...item} />}
                 keyExtractor={({ id }) => String(id)}
             />

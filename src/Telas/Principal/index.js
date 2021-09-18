@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, View } from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 import FAIcon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,7 +9,7 @@ import Stories from '../../Componentes/Stories';
 import { posts } from '../../Dados/data';
 
 export default function Principal() {
-    
+
     return <>
 
         {/* InstaDog e icones */}
@@ -20,8 +20,7 @@ export default function Principal() {
             <Ionicons name="chatbubble-ellipses-outline" style={estilos.icones} />
         </View>
 
-
-        <Stories teste={posts} />
+        <Stories fonte={posts} />
 
         {/* Postagens */}
         <View style={estilos.posts}>

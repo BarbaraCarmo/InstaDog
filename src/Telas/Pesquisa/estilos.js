@@ -15,5 +15,10 @@ export default StyleSheet.create({
         width: 136,
         margin: 1,
         alignSelf: "center",
+    }, 
+    video: {
+        width: 135, 
+        height: 272, 
+        margin: 1
     }
 });

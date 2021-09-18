@@ -23,7 +23,6 @@ export default StyleSheet.create({
         backgroundColor: cores.fundoPadrao,
         alignSelf: "center",
         margin: 2,
-        fontFamily: "AppleSDGothicNeo-Bold",
         fontWeight: "bold"
     },
     postagem: {
@@ -53,7 +52,6 @@ export default StyleSheet.create({
     nameCaption: {
         color: cores.branco,
         margin: 10,
-        fontFamily: "AppleSDGothicNeo-Bold"
     }
 
 });

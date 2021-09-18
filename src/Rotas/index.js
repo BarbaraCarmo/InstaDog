@@ -8,6 +8,7 @@ import estilos from './estilos';
 import Principal from '../Telas/Principal';
 import Perfil from '../Telas/Perfil';
 import Pesquisa from '../Telas/Pesquisa';
+import Reels from '../Telas/Reels';
 
 import { cores } from '../estilosGlobal';
 
@@ -19,26 +20,28 @@ export default function Rotas() {
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
                     if (route.name == 'Principal') {
-                        return <Ionicons name={focused ? "home" : "home-outline"} style={estilos.icones}/>
+                        return <Ionicons name={focused ? "home" : "home-outline"} style={estilos.icones} />
                     } else if (route.name == "Pesquisar") {
-                        return <Ionicons name={focused ? "search" : "search-outline"} style={estilos.icones}/>
+                        return <Ionicons name={focused ? "search" : "search-outline"} style={estilos.icones} />
                     } else if (route.name == "Play") {
-                        return <MCIcon name={focused ? "play-box-multiple" : "play-box-multiple-outline"} style={estilos.icones}/>
-                    }else if (route.name == "Shop") {
-                        return <MCIcon name={focused ? "shopping" : "shopping-outline"} style={estilos.icones}/>
+                        return <MCIcon name={focused ? "play-box-multiple" : "play-box-multiple-outline"} style={estilos.icones} />
+                    } else if (route.name == "Shop") {
+                        return <MCIcon name={focused ? "shopping" : "shopping-outline"} style={estilos.icones} />
                     } else {
-                        return <Ionicons name={focused ? "md-person-circle-sharp" : "md-person-circle-outline"} style={estilos.icones}/>
+                        return <Ionicons name={focused ? "md-person-circle-sharp" : "md-person-circle-outline"} style={estilos.icones} />
                     }
                 },
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarActiveBackgroundColor: cores.fundoPadrao,
                 tabBarInactiveBackgroundColor: cores.fundoPadrao,
+                tabBarHideOnKeyboard: true,
             })}
+            
         >
             <Tab.Screen name="Principal" component={Principal} />
             <Tab.Screen name="Pesquisar" component={Pesquisa} />
-            <Tab.Screen name="Play" component={Principal} />
+            <Tab.Screen name="Play" component={Reels} />
             <Tab.Screen name="Shop" component={Principal} />
             <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>

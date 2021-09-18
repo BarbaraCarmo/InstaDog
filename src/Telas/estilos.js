@@ -13,7 +13,6 @@ export default StyleSheet.create({
         alignSelf: "center",
         color: cores.branco,
         padding: 15,
-        fontFamily: "AppleSDGothicNeo-Bold"
     },
     iconesCabecalho: {
         flex: 0.5,

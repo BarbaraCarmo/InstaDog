@@ -11,9 +11,10 @@ export default StyleSheet.create({
         alignSelf: "center",
     },
     flexArea: {
-        flex: 0.15,
+        minHeight: 50,
         flexDirection: "row",
         backgroundColor: cores.fundoPadrao,
+        marginTop: 10
     },
     infosNumeros: {
         flex: 1,
@@ -24,7 +25,6 @@ export default StyleSheet.create({
     numeros: {
         color: cores.branco,
         fontSize: 20,
-        fontFamily: "AppleSDGothicNeo-Bold"
     },
     legendaNums: {
         color: cores.branco,
@@ -46,7 +46,6 @@ export default StyleSheet.create({
         color: cores.branco,
         fontSize: 13,
         fontWeight: "bold",
-        fontFamily: "AppleSDGothicNeo-Bold",
         padding: 2
 
     },

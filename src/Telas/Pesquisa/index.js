@@ -1,25 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Col, Row, Grid } from "react-native-easy-grid";
-import { ScrollView, Image, Text, View, TextInput } from "react-native";
+import { ScrollView, Image, View, TextInput } from "react-native";
 import { cores } from '../../estilosGlobal';
 import estilos from './estilos';
-import YoutubePlayer from 'react-native-youtube-iframe';
+import { Video } from 'expo-av';
 
 export default function Pesquisa() {
     const [imagem, setImagem] = useState("");
+    const [raca, setRaca] = useState("");
+    const video = useRef(null);
+    const [status, setStatus] = useState({});
+    let pos = -1;
 
     useEffect(() => {
-        fetch('https://dog.ceo/api/breeds/image/random/20')
-            .then(response => response.json())
-            .then(response => {
-                setImagem(response.message);
-            })
-            .catch(err => console.error(err));
+        randomDog()
     }, [])
 
-    const pesquisaRaca = (pesquisa) => {
-        console.log(pesquisa);
-        fetch('https://dog.ceo/api/breed/' + pesquisa + '/images/random')
+    const randomDog = () => {
+        fetch('https://dog.ceo/api/breeds/image/random/20')
             .then(response => response.json())
             .then(response => {
                 setImagem(response.message);
@@ -27,67 +25,112 @@ export default function Pesquisa() {
             .catch(err => console.error(err));
     }
 
-    return <>
-        <View style={{ flex: 0.1, backgroundColor: cores.fundoPadrao }}>
-            <TextInput
-                placeholder="Pesquisa"
-                placeholderTextColor={cores.cinza}
-                style={estilos.input}
-                selectTextOnFocus
-                onChangeText={(pesquisa) => { pesquisaRaca(pesquisa.toLowerCase()) }}
+    const pesquisaRaca = () => {
+        if (raca == "") { randomDog() } else {
+            fetch('https://dog.ceo/api/breed/' + raca + '/images/random/20')
+                .then(response => response.json())
+                .then(response => {
+                    setImagem(response.message);
+                })
+                .catch(err => console.error(err));
+        }
+    }
+
+    function myVideo() {
+        return <>
+            <Video
+                ref={video}
+                style={estilos.video}
+                source={{
+                    uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+                }}
+                useNativeControls
+                isLooping
+                resizeMode="cover"
+                shouldPlay
+                onPlaybackStatusUpdate={status => setStatus(() => status)}
             />
-        </View>
-        <ScrollView style={{ flex: 1, backgroundColor: cores.fundoPadrao }}>
+        </>
+    }
+
+    function myPhoto() {
+        pos++;
+        return <>
+            <Image style={estilos.fotos} source={{ uri: imagem[pos] }} />
+        </>
+    }
+
+    return <>
+        <ScrollView style={{ flex: 2, backgroundColor: cores.fundoPadrao }}>
+            <View style={{ backgroundColor: cores.fundoPadrao, zIndex: 1, height: 70 }}>
+                <TextInput
+                    placeholder="Pesquisa"
+                    placeholderTextColor={cores.cinza}
+                    style={estilos.input}
+                    selectTextOnFocus
+                    onChangeText={(pesquisa) => { setRaca(pesquisa.toLowerCase()) }}
+                    onEndEditing={() => pesquisaRaca()}
+                />
+            </View>
             <Grid>
                 <Col>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[0] }} />
+                        {myPhoto()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[1] }} />
+                        {myPhoto()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[2] }} />
+                        {myPhoto()}
                     </Row>
                     <Row>
-                        <YoutubePlayer height={272}
-                            width={135}
-                            margin={1}
-                            play={true}
-                            videoId={'84WIaK3bl_s'} />
+                        {myVideo()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[3] }} />
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                </Col>
+                <Col>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
+                    </Row>
+                    <Row>
+                        {myPhoto()}
                     </Row>
                 </Col>
                 <Col>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[4] }} />
+                        {myVideo()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[5] }} />
+                        {myPhoto()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[6] }} />
+                        {myVideo()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[7] }} />
+                        {myPhoto()}
                     </Row>
                     <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[8] }} />
-                    </Row>
-                    <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[9] }} />
-                    </Row>
-                </Col>
-                <Col>
-                    <Image style={{ width: 135, height: 272, margin: 1 }} source={{ uri: imagem[1] }} />
-                    <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[10] }} />
-                    </Row>
-                    <Image style={{ width: 135, height: 272, margin: 1 }} source={{ uri: imagem[1] }} />
-                    <Row>
-                        <Image style={estilos.fotos} source={{ uri: imagem[11] }} />
+                        {myPhoto()}
                     </Row>
                 </Col>
             </Grid>
