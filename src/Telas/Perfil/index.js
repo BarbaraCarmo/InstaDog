@@ -76,14 +76,12 @@ export default function Perfil() {
             {/* Botão editar perfil */}
             <View style={{ backgroundColor: cores.fundoPadrao }}>
                 <View style={estilos.editaPerfil}>
-                    <Button color={cores.branco} title="Editar Perfil" />
+                    <Button color={cores.fundoPadrao} title="Editar Perfil" />
                 </View>
             </View>
 
             {/* Destaques */}
-            <View style={{ flex: 0.3 }}>
-                <Stories fonte={stories} />
-            </View>
+            <Stories fonte={stories} />
 
             {/* Icones feed, reels, igtv */}
             <View style={estilos.flexArea}>

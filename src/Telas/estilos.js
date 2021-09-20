@@ -3,7 +3,7 @@ import { cores } from '../estilosGlobal'
 
 export default StyleSheet.create({
     cabecalho: {
-        flex: 1,
+        flex: 1.2,
         flexDirection: "row",
         backgroundColor: cores.fundoPadrao,
     },
@@ -23,7 +23,7 @@ export default StyleSheet.create({
         alignSelf: "center",
     },
     posts: {
-        flex: 10,
+        flex: 9.7,
         backgroundColor: cores.fundoPadrao,
     },
     icones: {

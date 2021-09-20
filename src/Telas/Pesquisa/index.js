@@ -8,8 +8,6 @@ import { Video } from 'expo-av';
 export default function Pesquisa() {
     const [imagem, setImagem] = useState("");
     const [raca, setRaca] = useState("");
-    const video = useRef(null);
-    const [status, setStatus] = useState({});
     let pos = -1;
 
     useEffect(() => {
@@ -39,16 +37,14 @@ export default function Pesquisa() {
     function myVideo() {
         return <>
             <Video
-                ref={video}
                 style={estilos.video}
                 source={{
                     uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
                 }}
-                useNativeControls
                 isLooping
+                isMuted
                 resizeMode="cover"
                 shouldPlay
-                onPlaybackStatusUpdate={status => setStatus(() => status)}
             />
         </>
     }

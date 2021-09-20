@@ -20,7 +20,7 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        margin: 10
+        margin: 8
     },
     numeros: {
         color: cores.branco,
@@ -44,23 +44,22 @@ export default StyleSheet.create({
     },
     userName: {
         color: cores.branco,
-        fontSize: 13,
+        fontSize: 15,
         fontWeight: "bold",
         padding: 2
 
     },
     categoria: {
         color: cores.cinza,
-        fontSize: 12,
+        fontSize: 13,
         padding: 2
     },
     descricao: {
         color: cores.branco,
-        fontSize: 13,
+        fontSize: 14,
         padding: 2,
     },
     editaPerfil: {
-        backgroundColor: cores.fundoPadrao,
         borderRadius: 5,
         margin: 10,
         justifyContent: "center",

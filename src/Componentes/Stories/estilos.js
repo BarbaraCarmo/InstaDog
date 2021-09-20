@@ -3,11 +3,11 @@ import { cores } from '../../estilosGlobal'
 
 export default StyleSheet.create({
     stories: {
-        flex: 2,
+        flex: 2.5,
         backgroundColor: cores.fundoPadrao,
     },
     userPhoto: {
-        flex: 3,
+        flex: 2,
         margin: 7,
         height: 70,
         width: 70,
@@ -21,6 +21,6 @@ export default StyleSheet.create({
         flex: 0.8,
         fontSize: 12,
         color: cores.branco,
-        alignSelf: "center"
+        alignSelf: "center",
     }
 })
