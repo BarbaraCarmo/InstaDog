@@ -11,6 +11,8 @@ import Pesquisa from '../Telas/Pesquisa';
 import Reels from '../Telas/Reels';
 
 import { cores } from '../estilosGlobal';
+import StackNavigator from '../Componentes/StackNavigator';
+import Adote from '../Telas/Adote';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,14 +21,14 @@ export default function Rotas() {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
-                    if (route.name == 'Principal') {
+                    if (route.name == 'Stack') {
                         return <Ionicons name={focused ? "home" : "home-outline"} style={estilos.icones} />
                     } else if (route.name == "Pesquisar") {
                         return <Ionicons name={focused ? "search" : "search-outline"} style={estilos.icones} />
                     } else if (route.name == "Play") {
                         return <MCIcon name={focused ? "play-box-multiple" : "play-box-multiple-outline"} style={estilos.icones} />
-                    } else if (route.name == "Shop") {
-                        return <MCIcon name={focused ? "shopping" : "shopping-outline"} style={estilos.icones} />
+                    } else if (route.name == "Adote") {
+                        return <Ionicons name={focused ? "paw" : "paw-outline"} style={estilos.icones} />
                     } else {
                         return <Ionicons name={focused ? "md-person-circle-sharp" : "md-person-circle-outline"} style={estilos.icones} />
                     }
@@ -37,12 +39,12 @@ export default function Rotas() {
                 tabBarInactiveBackgroundColor: cores.fundoPadrao,
                 tabBarHideOnKeyboard: true,
             })}
-            
+
         >
-            <Tab.Screen name="Principal" component={Principal} />
+            <Tab.Screen name="Stack" component={StackNavigator} />
             <Tab.Screen name="Pesquisar" component={Pesquisa} />
             <Tab.Screen name="Play" component={Reels} />
-            <Tab.Screen name="Shop" component={Principal} />
+            <Tab.Screen name="Adote" component={Adote} />
             <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
     </NavigationContainer>

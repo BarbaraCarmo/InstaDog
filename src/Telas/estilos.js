@@ -34,4 +34,12 @@ export default StyleSheet.create({
         padding: 0,
         alignSelf: "center",
     },
+    input: {
+        backgroundColor: cores.cinzaEscuro,
+        height: 40,
+        color: 'white',
+        borderRadius: 10,
+        margin: 5,
+        padding: 10,
+    },
 });

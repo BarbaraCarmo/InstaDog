@@ -3,6 +3,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import { ScrollView, Image, View, TextInput } from "react-native";
 import { cores } from '../../estilosGlobal';
 import estilos from './estilos';
+import estilosTelas from "../estilos";
 import { Video } from 'expo-av';
 
 export default function Pesquisa() {
@@ -58,11 +59,11 @@ export default function Pesquisa() {
 
     return <>
         <ScrollView style={{ flex: 2, backgroundColor: cores.fundoPadrao }}>
-            <View style={{ backgroundColor: cores.fundoPadrao, zIndex: 1, height: 70 }}>
+            <View style={{ backgroundColor: cores.fundoPadrao, zIndex: 1, height: 60, justifyContent: "center" }}>
                 <TextInput
                     placeholder="Pesquisa"
                     placeholderTextColor={cores.cinza}
-                    style={estilos.input}
+                    style={estilosTelas.input}
                     selectTextOnFocus
                     onChangeText={(pesquisa) => { setRaca(pesquisa.toLowerCase()) }}
                     onEndEditing={() => pesquisaRaca()}

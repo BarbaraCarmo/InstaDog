@@ -74,10 +74,8 @@ export default function Perfil() {
             </View>
 
             {/* Botão editar perfil */}
-            <View style={{ backgroundColor: cores.fundoPadrao }}>
-                <View style={estilos.editaPerfil}>
-                    <Button color={cores.fundoPadrao} title="Editar Perfil" />
-                </View>
+            <View style={estilos.editaPerfil}>
+                <Button color={cores.fundoPadrao} title="Editar Perfil" />
             </View>
 
             {/* Destaques */}
@@ -93,9 +91,9 @@ export default function Perfil() {
 
             {/* Grade de fotos */}
             <Grid>
-                {Colunas(pos = 0)}
-                {Colunas(pos = 6)}
-                {Colunas(pos = 12)}
+                {Colunas(pos = 1)}
+                {Colunas(pos = 7)}
+                {Colunas(pos = 13)}
             </Grid>
         </ScrollView>
     </>

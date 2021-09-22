@@ -12,7 +12,7 @@ export default function Reels() {
     const [imagem, setImagem] = useState("");
 
     useEffect(() => {
-        fetch('https://dog.ceo/api/breeds/image/random/5')
+        fetch('https://dog.ceo/api/breeds/image/random/7')
             .then(response => response.json())
             .then(response => {
                 setImagem(response.message);

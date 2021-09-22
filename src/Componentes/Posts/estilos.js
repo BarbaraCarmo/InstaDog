@@ -20,7 +20,6 @@ export default StyleSheet.create({
     userName: {
         flex: 2,
         color: cores.branco,
-        backgroundColor: cores.fundoPadrao,
         alignSelf: "center",
         margin: 2,
         fontWeight: "bold"

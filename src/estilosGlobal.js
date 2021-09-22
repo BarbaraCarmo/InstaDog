@@ -4,7 +4,7 @@ export const cores = {
     fundoPadrao: 'black',
     azul: '#0a96ed',
     cinza: "#9a9a9a",
-    cinzaEscuro: '#1a1a1a',
+    cinzaEscuro: '#2c2c2c',
     
     verde: 'green',
     rosa: 'pink',
