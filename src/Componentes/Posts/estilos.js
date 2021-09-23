@@ -51,6 +51,22 @@ export default StyleSheet.create({
     nameCaption: {
         color: cores.branco,
         margin: 10,
+    }, 
+    mascaraLike: {
+        height: 450,
+        width: 450,
+        alignItems: "center",
+        justifyContent: "center",
+        position: "absolute", 
+        top: 0,
+        backgroundColor: 'rgba(52, 52, 52, 0.3)'
+
+    },
+    iconeLike: {
+        fontSize: 90,
+        color: cores.branco,
+        padding: 0,
+        alignSelf: "center",
     }
 
 });

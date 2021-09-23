@@ -5,16 +5,27 @@ import FAIcon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FIcons from 'react-native-vector-icons/Feather';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import doubleClicker from '../DoubleClick';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 export default function Posts({ id, name }) {
     const [imagem, setImagem] = useState("");
     const [coracao, setCoracao] = useState("heart-outline");
+    const [controle, setControle] = useState(false);
+    let count = 0;
 
     const onClickHeart = () => {
         if (coracao == "heart-outline") {
             setCoracao("heart");
-        } else { setCoracao("heart-outline") }
+            setControle(true);
+        } else { setCoracao("heart-outline"); setControle(false); }
+    };
+    const duploClick = () => {
+        count++;
+        if (count == 2) {
+            count = 0;
+            setControle(true);
+            setCoracao("heart");
+        }
     };
 
     useEffect(() => {
@@ -27,12 +38,21 @@ export default function Posts({ id, name }) {
     }, [])
 
     return <>
-        {/* <doubleClicker> */}
+        <TouchableWithoutFeedback
+            onPress={() => {
+                duploClick();
+            }}>
             <View style={estilos.flexArea}>
                 <Image style={estilos.userPhoto} source={{ uri: imagem[id] }} />
                 <Text style={estilos.userName}>{name}</Text>
             </View>
-            <Image style={estilos.postagem} source={{ uri: imagem[id] }} />
+            <View style={{alignItems: "center", justifyContent: "center"}}>
+                <Image style={estilos.postagem} source={{ uri: imagem[id] }} />
+                {controle && <View style={estilos.mascaraLike}>
+                    <MCIcons name="heart" style={estilos.iconeLike} />
+                </View>}
+
+            </View>
             <View style={estilos.flexArea}>
                 <MCIcons name={coracao} style={estilos.icones} onPress={onClickHeart} />
                 <Ionicons name="chatbubble-outline" style={estilos.icones} />
@@ -45,6 +65,6 @@ export default function Posts({ id, name }) {
                 {name}
                 <Text style={{ fontWeight: "normal" }}> eis aqui um doquinho super fofo</Text>
             </Text>
-        {/* </doubleClicker> */}
+        </TouchableWithoutFeedback>
     </>
 }

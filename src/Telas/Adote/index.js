@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Text, View, Button, TextInput } from "react-native";
-import { useNavigation } from '@react-navigation/native';
 import estilosTelas from '../estilos';
 import estilos from "./estilos"
 import { cores } from '../../estilosGlobal';
 import MAIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { posts } from '../../Dados/data';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -14,14 +11,32 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function Adote() {
     const [imagem, setImagem] = useState("");
 
+    const [raca, setRaca] = useState("");
+
     useEffect(() => {
+        randomDog()
+    }, [])
+
+    const randomDog = () => {
         fetch('https://dog.ceo/api/breeds/image/random/20')
             .then(response => response.json())
             .then(response => {
                 setImagem(response.message);
             })
             .catch(err => console.error(err));
-    }, [])
+    }
+
+    const pesquisaRaca = () => {
+        if (raca == "") { randomDog() } else {
+            fetch('https://dog.ceo/api/breed/' + raca + '/images/random/20')
+                .then(response => response.json())
+                .then(response => {
+                    setImagem(response.message);
+                })
+                .catch(err => console.error(err));
+        }
+    }
+
 
     return <>
 
@@ -40,7 +55,8 @@ export default function Adote() {
                 placeholderTextColor={cores.cinza}
                 style={estilosTelas.input}
                 selectTextOnFocus
-                editable={false}
+                onChangeText={(pesquisa) => { setRaca(pesquisa.toLowerCase()) }}
+                onEndEditing={() => pesquisaRaca()}
             />
         </View>
         <View style={estilos.cabecalho}>
