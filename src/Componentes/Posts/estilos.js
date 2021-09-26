@@ -59,7 +59,7 @@ export default StyleSheet.create({
         justifyContent: "center",
         position: "absolute", 
         top: 0,
-        backgroundColor: 'rgba(52, 52, 52, 0.3)'
+        // backgroundColor: 'rgba(52, 52, 52, 0.3)'
 
     },
     iconeLike: {

@@ -57,7 +57,6 @@ export const stories = [
     {
         id: 2,
         name: "Youtube",
-        icone: "",
     },
     {
         id: 3,

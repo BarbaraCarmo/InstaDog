@@ -17,6 +17,8 @@ export default function Posts({ id, name }) {
         if (coracao == "heart-outline") {
             setCoracao("heart");
             setControle(true);
+            setTimeout(() => { setControle(false) }, 1500);
+
         } else { setCoracao("heart-outline"); setControle(false); }
     };
     const duploClick = () => {
@@ -25,6 +27,7 @@ export default function Posts({ id, name }) {
             count = 0;
             setControle(true);
             setCoracao("heart");
+            setTimeout(() => { setControle(false) }, 1500);
         }
     };
 
@@ -46,7 +49,7 @@ export default function Posts({ id, name }) {
                 <Image style={estilos.userPhoto} source={{ uri: imagem[id] }} />
                 <Text style={estilos.userName}>{name}</Text>
             </View>
-            <View style={{alignItems: "center", justifyContent: "center"}}>
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <Image style={estilos.postagem} source={{ uri: imagem[id] }} />
                 {controle && <View style={estilos.mascaraLike}>
                     <MCIcons name="heart" style={estilos.iconeLike} />
