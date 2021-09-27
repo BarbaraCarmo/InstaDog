@@ -42,5 +42,19 @@ export default StyleSheet.create({
         color: cores.branco,
         alignSelf: 'flex-start',
         margin: 5,
+    },
+    mascaraLike: {
+        height: 615,
+        width: 420,
+        alignItems: "center",
+        justifyContent: "center",
+        position: "absolute", 
+        top: 0,
+    },
+    iconeLike: {
+        fontSize: 90,
+        color: cores.branco,
+        padding: 0,
+        alignSelf: "center",
     }
 })

@@ -19,7 +19,7 @@ export default function Posts({ id, name }) {
             setControle(true);
             setTimeout(() => { setControle(false) }, 1500);
 
-        } else { setCoracao("heart-outline"); setControle(false); }
+        } else { setCoracao("heart-outline"); }
     };
     const duploClick = () => {
         count++;
